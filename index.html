@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TeleVault — Back up your phone to your own Telegram</title>
+  <meta name="description" content="TeleVault backs up the folders on your Android phone to your own Telegram account. Unlimited storage, files up to 2 GB (4 GB with Premium), no TeleVault server in between. Free and Pro editions.">
+  <meta name="author" content="Govind S R">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mr-who-root.github.io/TeleVault-Website/">
+  <meta property="og:title" content="TeleVault — Back up your phone to your own Telegram">
+  <meta property="og:description" content="Turn your own Telegram into an unlimited, private backup vault for the files on your phone.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mr-who-root.github.io/TeleVault-Website/">
+  <meta property="og:image" content="https://mr-who-root.github.io/TeleVault-Website/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#12182B" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#EDE6D6" media="(prefers-color-scheme: light)">
+
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Apply the saved theme before first paint to avoid a flash -->
+  <script>
+    try {
+      var t = localStorage.getItem('televault_theme');
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="#top" class="brand" aria-label="TeleVault home">
+        <img class="brand-icon" src="assets/icon.svg" width="36" height="36" alt="">
+        <span class="app-name">TeleVault</span>
+      </a>
+      <nav class="site-nav" aria-label="Sections">
+        <a href="#features">Features</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#compare">Free vs Pro</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <a class="btn btn-primary btn-sm header-cta" href="https://play.google.com/store/apps/details?id=com.televault.free" target="_blank" rel="noopener">
+          <i class="fa-brands fa-google-play"></i> Get it free
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="status-dot"></span> Android · Free &amp; Pro</span>
+          <h1>Your Telegram is now your unlimited backup vault.</h1>
+          <p class="lede">
+            TeleVault backs up the folders on your phone (Camera, Pictures, Documents or any folder you like) to your own Telegram account.
+            No new cloud account, no storage plan, and no TeleVault server in between.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.televault.free" target="_blank" rel="noopener">
+              <i class="fa-brands fa-google-play"></i> Get TeleVault Free
+            </a>
+            <!-- STORE-PENDING: TeleVault Pro isn't public on Google Play yet. When it is, replace this <span> with:
+                 <a class="btn btn-outline" href="https://play.google.com/store/apps/details?id=com.vaultgram.app" target="_blank" rel="noopener"><i class="fa-brands fa-google-play"></i> Get TeleVault Pro</a> -->
+            <span class="btn btn-outline is-pending" aria-disabled="true">
+              <i class="fa-brands fa-google-play"></i> TeleVault Pro · coming soon
+            </span>
+          </div>
+          <dl class="hero-stats">
+            <div><dt>Storage</dt><dd>Unlimited</dd></div>
+            <div><dt>Per file</dt><dd>2 GB <small>(4 GB Premium)</small></dd></div>
+            <div><dt>Our servers</dt><dd>None</dd></div>
+          </dl>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <figure class="phone phone-back"><img src="assets/screens/analytics.webp" width="620" height="1386" alt=""></figure>
+          <figure class="phone phone-front"><img src="assets/screens/cloud.webp" width="620" height="1386" alt=""></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section" id="how">
+      <div class="container">
+        <header class="section-head">
+          <span class="kicker">How it works</span>
+          <h2>Three steps, then it looks after itself.</h2>
+        </header>
+        <ol class="steps">
+          <li class="step">
+            <span class="step-num">01</span>
+            <h3>Sign in with Telegram</h3>
+            <p>Use your Telegram phone number and the login code Telegram sends you. Your session stays in your phone's secure storage.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">02</span>
+            <h3>Add a vault</h3>
+            <p>Pick a folder and where it should go: your Saved Messages, or a private group or channel you make just for backups.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">03</span>
+            <h3>Sync, and it's safe</h3>
+            <p>Tap Sync, or with Pro let it run on its own. Everything you've backed up shows up in the Cloud tab, ready to restore.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============
+         Each card carries an availability tag: tag-both (Free & Pro) or tag-pro (Pro only).
+         Keep in step with the apps — see CLAUDE.md. -->
+    <section class="section section-alt" id="features">
+      <div class="container">
+        <header class="section-head">
+          <span class="kicker">Features</span>
+          <h2>Everything you need from a backup app, on storage you already have.</h2>
+        </header>
+        <div class="feature-grid">
+
+          <article class="feature">
+            <div class="feature-top"><span class="feature-icon"><i class="fa-solid fa-folder-open"></i></span><span class="tag tag-both">Free &amp; Pro</span></div>
+            <h3>Back up any folder</h3>
+            <p>Quick picks for Camera, Pictures and Documents, or choose any folder with Android's folder picker. Add optional file-type filters so a vault only backs up what you want.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-top"><span class="feature-icon"><i class="fa-brands fa-telegram"></i></span><span class="tag tag-both">Free &amp; Pro</span></div>
+            <h3>Your choice of destination</h3>
+            <p>Send backups to your Saved Messages, or to a private group or channel. Each vault can go to its own chat.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-top"><span class="feature-icon"><i class="fa-solid fa-clock-rotate-left"></i></span><span class="tag tag-pro">Pro</span></div>
+            <h3>Automatic backups</h3>
+            <p>Back up as soon as new files appear, or every 15 minutes, hourly, daily or weekly, even with the app closed. Each vault shows when its next backup is due.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-top"><span class="feature-icon"><i class="fa-solid fa-file-arrow-up"></i></span><span class="tag tag-both">Free &amp; Pro</span></div>
+            <h3>Big files, smart uploads</h3>
+            <p>Files up to 2 GB each, or 4 GB with Telegram Premium. Only new or changed files are uploaded, and interrupted uploads are retried automatically.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-top"><span class="feature-icon"><i class="fa-solid fa-cloud"></i></span><span class="tag tag-both">Free &amp; Pro</span></div>
+            <h3>Your cloud, one tap away</h3>
+            <p>Browse every backed-up file in the Cloud tab. Search, sort, and filter by Synced, Uploading, Pending or Failed, and retry anything that failed.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-top"><span class="feature-icon"><i class="fa-solid fa-rotate-left"></i></span><span class="tag tag-both">Free &amp; Pro</span></div>
+            <h3>Restore in a tap</h3>
+            <p>Bring a single file, or many at once, back to your phone from Telegram.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-top"><span class="feature-icon"><i class="fa-solid fa-paper-plane"></i></span><span class="tag tag-both">Free &amp; Pro</span></div>
+            <h3>Upload on demand</h3>
+            <p>The Upload tab sends any file to any chat, group or channel right now, and keeps a list of what you've sent from there.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-top"><span class="feature-icon"><i class="fa-solid fa-mobile-screen-button"></i></span><span class="tag tag-both">Free &amp; Pro</span></div>
+            <h3>Move to a new phone</h3>
+            <p>Your backup list is itself saved to Telegram, so you can restore it and pick up where you left off on a new device.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-top"><span class="feature-icon"><i class="fa-solid fa-broom"></i></span><span class="tag tag-both">Free &amp; Pro</span></div>
+            <h3>Free up space</h3>
+            <p>Optionally remove the phone copy 7, 30 or 90 days after a file is backed up. TeleVault checks it's still on Telegram first, so it never deletes your only copy.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-top"><span class="feature-icon"><i class="fa-solid fa-chart-simple"></i></span><span class="tag tag-both">Free &amp; Pro</span></div>
+            <h3>Vault analytics</h3>
+            <p>Total backed up, file and vault counts at a glance, with breakdowns by file type, by vault and over the last 30 days.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-top"><span class="feature-icon"><i class="fa-solid fa-wifi"></i></span><span class="tag tag-pro">Pro</span></div>
+            <h3>Wi-Fi only &amp; while charging</h3>
+            <p>Keep backups off your mobile data, or wait until the phone is plugged in. Blocked backups pause and resume on their own once conditions are met.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-top"><span class="feature-icon"><i class="fa-solid fa-gauge-simple"></i></span><span class="tag tag-both">Free &amp; Pro</span></div>
+            <h3>Safe Upload Speed</h3>
+            <p>Adds a brief pause between files so automated backups look like normal Telegram use. Each file still uploads at full speed.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-top"><span class="feature-icon"><i class="fa-solid fa-lock"></i></span><span class="tag tag-both">Free &amp; Pro</span></div>
+            <h3>Private by design</h3>
+            <p>Files go straight from your phone to Telegram through your own account. TeleVault only reads the folders you pick, with no broad storage permission.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-top"><span class="feature-icon"><i class="fa-solid fa-circle-half-stroke"></i></span><span class="tag tag-both">Free &amp; Pro</span></div>
+            <h3>Calm by design</h3>
+            <p>A dark "ink and brass" look, with Light and System themes too. Built-in Help walks you through setting up a private backup channel.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SCREENSHOTS ============ -->
+    <section class="section" id="screenshots">
+      <div class="container">
+        <header class="section-head">
+          <span class="kicker">Screenshots</span>
+          <h2>A file manager that thinks like a vault.</h2>
+          <p>Real screens from the app. Most are from TeleVault Pro; the Free edition looks the same, with ads and Pro-only options locked.</p>
+        </header>
+      </div>
+      <div class="gallery" tabindex="0" aria-label="App screenshots, scrollable">
+        <figure class="shot"><div class="phone"><img src="assets/screens/cloud.webp" width="620" height="1386" loading="lazy" alt="Cloud tab listing backed-up files with search and status filters"></div><figcaption>Cloud: search, filter, restore</figcaption></figure>
+        <figure class="shot"><div class="phone"><img src="assets/screens/vaults.webp" width="620" height="1386" loading="lazy" alt="Vaults screen showing a Camera folder linked to a Telegram channel"></div><figcaption>One folder, one chat</figcaption></figure>
+        <figure class="shot"><div class="phone"><img src="assets/screens/add-vault.webp" width="620" height="1386" loading="lazy" alt="Add a Vault dialog with folder, destination and schedule"></div><figcaption>Add a vault</figcaption></figure>
+        <figure class="shot"><div class="phone"><img src="assets/screens/schedule.webp" width="620" height="1386" loading="lazy" alt="Backup schedule options from 'when new files are added' to weekly"></div><figcaption>Backup schedules <span class="tag tag-pro">Pro</span></figcaption></figure>
+        <figure class="shot"><div class="phone"><img src="assets/screens/analytics.webp" width="620" height="1386" loading="lazy" alt="Vault Analytics showing total backed up and unlimited cloud storage"></div><figcaption>Vault analytics</figcaption></figure>
+        <figure class="shot"><div class="phone"><img src="assets/screens/analytics-breakdown.webp" width="620" height="1386" loading="lazy" alt="Analytics breakdown by file type, by vault and last 30 days"></div><figcaption>By type, by vault, by day</figcaption></figure>
+        <figure class="shot"><div class="phone"><img src="assets/screens/settings-behavior.webp" width="620" height="1386" loading="lazy" alt="Settings with theme, Wi-Fi only, charging only and Safe Upload Speed"></div><figcaption>Backups that respect your phone</figcaption></figure>
+        <figure class="shot"><div class="phone"><img src="assets/screens/settings-cloud-backup.webp" width="620" height="1386" loading="lazy" alt="Cloud list backup and free up space settings"></div><figcaption>Cloud list backup &amp; free up space</figcaption></figure>
+        <figure class="shot"><div class="phone"><img src="assets/screens/help.webp" width="620" height="1386" loading="lazy" alt="Built-in Help with frequently asked questions"></div><figcaption>Built-in Help</figcaption></figure>
+        <figure class="shot"><div class="phone"><img src="assets/screens/free-sign-in.webp" width="620" height="1386" loading="lazy" alt="TeleVault Free sign-in screen asking for a Telegram phone number"></div><figcaption>Sign in with Telegram <span class="tag tag-free">Free</span></figcaption></figure>
+      </div>
+      <div class="container gallery-hint"><i class="fa-solid fa-arrows-left-right"></i> Scroll for more</div>
+    </section>
+
+    <!-- ============ FREE VS PRO ============
+         Source of truth for the Free column: TeleVault-Free/lib/core/config/free_tier_limits.dart
+         and pro_upgrade.dart. Keep in step — see CLAUDE.md. -->
+    <section class="section section-alt" id="compare">
+      <div class="container">
+        <header class="section-head">
+          <span class="kicker">Free vs Pro</span>
+          <h2>Start free. Go Pro when you want it to run on its own.</h2>
+        </header>
+
+        <div class="plans">
+          <div class="plan">
+            <div class="plan-head">
+              <h3>TeleVault Free</h3>
+              <p>Supported by ads. Everything you need to back up one folder by hand.</p>
+            </div>
+            <a class="btn btn-primary btn-block" href="https://play.google.com/store/apps/details?id=com.televault.free" target="_blank" rel="noopener"><i class="fa-brands fa-google-play"></i> Get it on Google Play</a>
+          </div>
+          <div class="plan plan-pro">
+            <div class="plan-head">
+              <h3>TeleVault Pro <span class="tag tag-pro">Pro</span></h3>
+              <p>Paid and ad-free, with every backup control unlocked from the start.</p>
+            </div>
+            <!-- STORE-PENDING: swap for a real link once com.vaultgram.app is public on Google Play. -->
+            <span class="btn btn-outline btn-block is-pending" aria-disabled="true"><i class="fa-brands fa-google-play"></i> Coming soon to Google Play</span>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="compare">
+            <caption class="sr-only">Feature comparison between TeleVault Free and TeleVault Pro</caption>
+            <thead>
+              <tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Pro</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Price</th><td>Free, with ads</td><td>Paid</td></tr>
+              <tr><th scope="row">Vaults (backed-up folders)</th><td>1<span class="note">Watch 5 short ads to unlock room for one more</span></td><td>Unlimited</td></tr>
+              <tr><th scope="row">When backups run</th><td>When you tap Sync</td><td>Tap Sync, or automatically<span class="note">On new files · every 15 min · hourly · daily · weekly</span></td></tr>
+              <tr><th scope="row">Back up on Wi-Fi only</th><td><span class="no" aria-label="No">—</span></td><td><span class="yes" aria-label="Yes"><i class="fa-solid fa-check"></i></span></td></tr>
+              <tr><th scope="row">Back up only while charging</th><td><span class="no" aria-label="No">—</span></td><td><span class="yes" aria-label="Yes"><i class="fa-solid fa-check"></i></span></td></tr>
+              <tr><th scope="row">Ads</th><td>Banner and native ads, plus an occasional pop-up when switching tabs<span class="note">Watch 2 ads to pause pop-ups for 24 hours</span></td><td>None<span class="note">No ad SDK, no advertising ID</span></td></tr>
+              <tr><th scope="row">Saved Messages, groups &amp; channels</th><td><span class="yes" aria-label="Yes"><i class="fa-solid fa-check"></i></span></td><td><span class="yes" aria-label="Yes"><i class="fa-solid fa-check"></i></span></td></tr>
+              <tr><th scope="row">Files up to 2 GB (4 GB Premium)</th><td><span class="yes" aria-label="Yes"><i class="fa-solid fa-check"></i></span></td><td><span class="yes" aria-label="Yes"><i class="fa-solid fa-check"></i></span></td></tr>
+              <tr><th scope="row">Cloud tab, search &amp; restore</th><td><span class="yes" aria-label="Yes"><i class="fa-solid fa-check"></i></span></td><td><span class="yes" aria-label="Yes"><i class="fa-solid fa-check"></i></span></td></tr>
+              <tr><th scope="row">Upload tab</th><td><span class="yes" aria-label="Yes"><i class="fa-solid fa-check"></i></span></td><td><span class="yes" aria-label="Yes"><i class="fa-solid fa-check"></i></span></td></tr>
+              <tr><th scope="row">Free up space</th><td><span class="yes" aria-label="Yes"><i class="fa-solid fa-check"></i></span></td><td><span class="yes" aria-label="Yes"><i class="fa-solid fa-check"></i></span></td></tr>
+              <tr><th scope="row">Vault analytics</th><td><span class="yes" aria-label="Yes"><i class="fa-solid fa-check"></i></span></td><td><span class="yes" aria-label="Yes"><i class="fa-solid fa-check"></i></span></td></tr>
+              <tr><th scope="row">Backup list saved to Telegram</th><td><span class="yes" aria-label="Yes"><i class="fa-solid fa-check"></i></span></td><td><span class="yes" aria-label="Yes"><i class="fa-solid fa-check"></i></span></td></tr>
+              <tr><th scope="row">Safe Upload Speed</th><td><span class="yes" aria-label="Yes"><i class="fa-solid fa-check"></i></span></td><td><span class="yes" aria-label="Yes"><i class="fa-solid fa-check"></i></span></td></tr>
+              <tr><th scope="row">Light, Dark &amp; System themes</th><td><span class="yes" aria-label="Yes"><i class="fa-solid fa-check"></i></span></td><td><span class="yes" aria-label="Yes"><i class="fa-solid fa-check"></i></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRIVACY ============ -->
+    <section class="section" id="privacy">
+      <div class="container">
+        <header class="section-head">
+          <span class="kicker">Privacy</span>
+          <h2>Your files never pass through us.</h2>
+          <p>There's no TeleVault server. The app talks straight to Telegram, signed in as you.</p>
+        </header>
+        <div class="privacy-grid">
+          <div class="privacy-item"><i class="fa-solid fa-server"></i><div><h3>No middleman</h3><p>Files go from your phone directly to the Telegram chat you choose, through your own account.</p></div></div>
+          <div class="privacy-item"><i class="fa-solid fa-key"></i><div><h3>Login stays on your phone</h3><p>Your Telegram session is kept in your phone's secure storage and never leaves the device.</p></div></div>
+          <div class="privacy-item"><i class="fa-solid fa-folder-tree"></i><div><h3>Only the folders you pick</h3><p>Uses Android's folder picker. No broad storage permission, and nothing is read until you set up a vault.</p></div></div>
+          <div class="privacy-item"><i class="fa-solid fa-eye-slash"></i><div><h3>Only you can see your backups</h3><p>Nobody else sees them unless you share the chat, group or channel they land in.</p></div></div>
+        </div>
+        <p class="privacy-link">
+          <a class="btn btn-outline" href="https://mr-who-root.github.io/TeleVault-Privacy-Policy/"><i class="fa-solid fa-shield-halved"></i> Read the full privacy policy</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============
+         Mirrors the in-app Help screen (lib/ui/screens/settings/help_screen.dart in both apps). -->
+    <section class="section section-alt" id="faq">
+      <div class="container narrow">
+        <header class="section-head">
+          <span class="kicker">FAQ</span>
+          <h2>Questions, answered.</h2>
+        </header>
+        <div class="faq">
+          <details>
+            <summary>Where does TeleVault send my backups?</summary>
+            <p>Wherever you choose when you set up a vault: usually your own Saved Messages, or a private group or channel you create just for backups. Nothing leaves your Telegram account.</p>
+          </details>
+          <details>
+            <summary>How do I create a private Telegram channel for backups?</summary>
+            <p>In the Telegram app, tap the pencil / new-message icon (or the menu in the top corner) and choose New Channel. Give it a name, tap Next, choose Private, and tap Create. You can skip adding members, since it only needs to hold your backups. Then pick it as the destination when you add a vault.</p>
+          </details>
+          <details>
+            <summary>How do I create a Telegram group?</summary>
+            <p>In the Telegram app, tap the pencil / new-message icon (or the menu in the top corner) and choose New Group. Select the contacts to add, tap the arrow, give the group a name and tap the checkmark. You can pick it as a backup destination the next time you add a vault.</p>
+          </details>
+          <details>
+            <summary>What's the maximum file size I can back up?</summary>
+            <p>2 GB per file, or 4 GB per file if your Telegram account has Telegram Premium. Telegram has no overall storage limit.</p>
+          </details>
+          <details>
+            <summary>Are my backed-up files private?</summary>
+            <p>Yes. Files go directly from your device to Telegram through your own account. Nobody else can see them unless you share the chat, group or channel they land in.</p>
+          </details>
+          <details>
+            <summary>How do I restore a backed-up file?</summary>
+            <p>Open the Cloud tab, tap a file or long-press to select several, then tap Restore to save them to your phone again.</p>
+          </details>
+          <details>
+            <summary>Why did a backup get skipped or blocked?</summary>
+            <p>Check Settings → Backup Behavior: a Wi-Fi-only or charging-only setting may be holding it until those conditions are met. Also check the vault card. If it asks you to choose the folder again, Android has dropped the app's access to it.</p>
+          </details>
+          <details>
+            <summary>What does TeleVault Pro add?</summary>
+            <p>Unlimited vaults, automatic backups (when new files are added, every 15 minutes, hourly, daily or weekly), Wi-Fi-only and charging-only backups, and no ads anywhere.</p>
+          </details>
+          <details>
+            <summary>Is TeleVault made by Telegram?</summary>
+            <p>No. TeleVault is an independent app. It is not affiliated with, endorsed by or sponsored by Telegram.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="section cta-band">
+      <div class="container cta-band-inner">
+        <img src="assets/icon.svg" width="72" height="72" alt="" class="cta-icon">
+        <h2>Back up your phone to Telegram today.</h2>
+        <div class="cta-row center">
+          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.televault.free" target="_blank" rel="noopener"><i class="fa-brands fa-google-play"></i> Get TeleVault Free</a>
+          <span class="btn btn-outline is-pending" aria-disabled="true"><i class="fa-brands fa-google-play"></i> TeleVault Pro · coming soon</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/icon.svg" width="32" height="32" alt="">
+        <div>
+          <strong>TeleVault</strong>
+          <span>by Govind S R</span>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="https://mr-who-root.github.io/TeleVault-Privacy-Policy/">Privacy Policy</a>
+        <a href="https://play.google.com/store/apps/details?id=com.televault.free" target="_blank" rel="noopener">Google Play</a>
+        <a href="mailto:letter2govind@gmail.com">Contact</a>
+        <a href="https://mr-who-root.github.io/">Developer</a>
+      </nav>
+      <p class="footer-note">
+        © <span id="currentYear">2026</span> Govind S R. TeleVault is an independent app and is not affiliated with, endorsed by or sponsored by Telegram. Telegram is a trademark of its respective owner. Google Play is a trademark of Google LLC.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
