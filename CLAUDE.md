@@ -27,9 +27,9 @@ The workspace-level `../CLAUDE.md` has the facts about both editions and the **s
 7. **FAQ** (`#faq`): `<details>` items mirroring the in-app Help screen (`lib/ui/screens/settings/help_screen.dart`).
 8. **Final CTA** and **footer**.
 
-## Pending Play link
+## Play links
 
-TeleVault Pro (`com.vaultgram.app`) isn't public on Google Play yet. Each Pro button is a dashed `<span class="btn ... is-pending">` marked with a `STORE-PENDING` comment. Once the Play page loads, replace each one with a real `<a>` link (the snippet is in the hero comment). Check with `curl -s -o /dev/null -w "%{http_code}" "https://play.google.com/store/apps/details?id=com.vaultgram.app"`; it should return 200.
+Both apps are live on Google Play: Free (`com.televault.free`) and Pro (`com.vaultgram.app`, live since 2026-10-09). Every "Get" button is a real `<a>` to its Play page (hero, plan cards, final CTA). The dashed `.btn.is-pending` style in `styles.css` is now unused; keep it in case a future edition launches the same way.
 
 ## Checking changes
 

@@ -5,7 +5,7 @@ The official website for **TeleVault**, the Android app that turns your own Tele
 **Live:** https://mr-who-root.github.io/TeleVault-Website/
 
 - Get TeleVault Free on [Google Play](https://play.google.com/store/apps/details?id=com.televault.free)
-- TeleVault Pro: coming soon to Google Play
+- Get TeleVault Pro on [Google Play](https://play.google.com/store/apps/details?id=com.vaultgram.app)
 - [Privacy Policy](https://mr-who-root.github.io/TeleVault-Privacy-Policy/)
 
 Static HTML/CSS/JS served by GitHub Pages from `main`, with no build step. Developed by Govind S R.
