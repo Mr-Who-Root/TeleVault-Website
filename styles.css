@@ -59,6 +59,52 @@
   color-scheme: dark;
 }
 
+/* TeleVault 2.0 — coming soon */
+.tag-new {
+  border: 1px solid var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+  margin-right: 8px;
+}
+.announce {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 10px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  background: var(--accent-soft);
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.announce:hover { color: var(--accent); }
+.v2 .section-head .kicker { display: inline-flex; align-items: center; }
+.v2-gallery { margin-top: 36px; }
+.v2-subhead { margin: 40px 0 16px; font-size: 1.3rem; }
+.v2-note {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-top: 28px;
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--accent);
+  background: var(--accent-soft);
+}
+.v2-note h3 { font-size: 1.05rem; margin-bottom: 6px; }
+.v2-note p { color: var(--text-muted); font-size: 0.93rem; }
+@media (max-width: 560px) {
+  .announce { margin: 10px 0 0; }
+  .v2-note { flex-direction: column; }
+  /* The 2.0 table fits a phone instead of scrolling sideways. */
+  .v2 .compare { min-width: 0; font-size: 0.82rem; }
+  .v2 .compare th, .v2 .compare td { padding: 10px 8px; }
+  .v2 .compare .note { font-size: 0.74rem; }
+}
+
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: var(--ink-900);
