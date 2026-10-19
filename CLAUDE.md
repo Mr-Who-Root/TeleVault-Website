@@ -13,12 +13,13 @@ The workspace-level `../CLAUDE.md` has the facts about both editions and the **s
 | `script.js` | Theme toggle (key `televault_theme`, shared with the privacy site) and footer year |
 | `assets/icon.svg`, `favicon-32.png`, `apple-touch-icon.png` | App icon, copied from `../TeleVault-Free/vaultgram-icons/` |
 | `assets/og-image.png` | Social preview: Free's 1024×500 feature graphic |
-| `assets/screens/*.webp` | App screenshots, 620 px wide |
+| `assets/screens/tv2-*.webp` | 2.0 app screenshots (Pro), 620 px wide, from the cleaned captures in `../video/V2.0` |
 | `.nojekyll` | Serve files as-is |
 
 ## Sections in `index.html` (in order) and what to edit
 
-1. **Hero** (`.hero`): tagline, Play buttons, stat strip (Unlimited / 2 GB (4 GB Premium) / no servers), two phone mock-ups.
+1. **Hero** (`.hero`): "New · TeleVault 2.0 is out" link, tagline, Play buttons, stat strip (Unlimited / 2 GB · no limit in Pro / no servers), two phone mock-ups.
+1b. **What's new in 2.0** (`#v2`): one card per 2.0 feature (same tags as Features) and the "Already using TeleVault? Update from Google Play" note.
 2. **How it works** (`#how`): three steps.
 3. **Features** (`#features`): one `<article class="feature">` per feature. Tag it `<span class="tag tag-both">Free &amp; Pro</span>` or `<span class="tag tag-pro">Pro</span>`. Pick a Font Awesome 6.5 icon. Keep the text short and user-facing.
 4. **Screenshots** (`#screenshots`): `<figure class="shot">` items in a horizontal scroller. Give each an `alt` and a short caption; add a `tag-pro` / `tag-free` badge if the screen is edition-specific.
